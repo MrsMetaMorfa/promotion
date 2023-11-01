@@ -1,0 +1,297 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: $font-family-primary;
+  font-size: inherit;
+  line-height: 1.44;
+}
+* {
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: rgba(0,0,0,.3) rgba(0,0,0,.3);
+
+  &::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0,0,0,.3);        /* color of the tracking area */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.3);    /* color of the scroll thumb */
+    border-radius: 2px;       /* roundness of the scroll thumb */
+    border: none;  /* creates padding around scroll thumb */
+  }
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: 1.25vw;
+  line-height: 1.44;
+  color: $color-black;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  @media screen and (max-width: $responsive-xs-max-width) {
+    font-size: 2.4vh;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+input {
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  text-decoration: none;
+  &-link {
+    color: inherit;
+  }
+  &-default {
+    padding: .78em 1.11em;
+    align-items: center;
+    border-radius: .78em;
+    text-transform: uppercase;
+    font-weight: 700;
+    @media screen and (max-width: $responsive-xs-max-width) {}
+  }
+  &-action {
+    padding: 0.83em;
+    background: $color-action;
+    color: $color-white;
+    font-size: 1.67vw;
+    line-height: 0.83;
+    @media screen and (max-width: $responsive-xs-max-width) {
+      font-size: 3.33vh;
+      padding: .8em;
+      line-height: 1;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  &--row-reverse {
+    flex-direction: row-reverse;
+  }
+  &--column {
+    flex-direction: column;
+  }
+  &--column-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.box {
+  border-radius: 2em;
+  background: $color-gray;
+  padding: 2.92vw 6vh;
+  @media screen and (max-width: $responsive-xs-max-width) {
+    padding: 2em 1.25em;
+  }
+  &-bright {
+    background: $color-bright;
+  }
+  &_text {
+    font-size: 1.67vw;
+    line-height: 1.33;
+    @media screen and (max-width: $responsive-xs-max-width) {
+      font-size: 2.4vh;
+    }
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0.66em;
+  right: 0.66em;
+  padding: 1em;
+  @media screen and (max-width: $responsive-xs-max-width) {
+    top: 0.25em;
+    right: 0.25em;
+  }
+  img {
+    width: 1.11em;
+    @media screen and (max-width: $responsive-xs-max-width) {}
+  }
+}
+
+.popup {
+  position: fixed;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.50);
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 520px) {
+    padding: 8.33vh 0 0;
+    overflow-y: auto;
+    height: 100vh;
+  }
+  &_box {
+    position: relative;
+    border-radius: 2em;
+    .title {
+      font-size: 3vw;
+      line-height: 1.14;
+      margin-bottom: .45em;
+      @media screen and (max-width: $responsive-xs-max-width) {
+        font-size: 4.67vh;
+        margin-bottom: .71em;
+      }
+    }
+    .btn-action {
+      margin: 0 auto;
+      width: 100%;
+    }
+    .box_text {
+      font-size: 1.67vw;
+      margin-top: .83em;
+      @media screen and (max-width: $responsive-xs-max-width) {
+        font-size: 2.4vh;
+        margin-top: .875em;
+      }
+    }
+  }
+  .btn-link {
+    text-decoration: underline;
+    color: $color-action;
+  }
+  .round-icon {
+    margin: 0 auto 1.11em;
+    width: 8.75vw;
+    height: 8.75vw;
+    border-radius: 50%;
+    padding: 1em;
+    background: $color-white;
+    @media screen and (max-width: $responsive-xs-max-width) {
+      width: 15vh;
+      height: 15vh;
+      margin-bottom: 1.25em;
+    }
+  }
+}
+.form {
+  &_line {
+    margin-bottom: .77em;
+    @media screen and (max-width: $responsive-xs-max-width) {
+      margin-bottom: .875em;
+    }
+  }
+  &_label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: .77em;
+    @media screen and (max-width: $responsive-xs-max-width) {
+      margin-bottom: .875em;
+      font-size: .875em;
+    }
+    &-checkbox {
+      font-weight: 400;
+      line-height: 1.2;
+      display: flex;
+      margin-bottom: 1.11em;
+      @media screen and (max-width: $responsive-xs-max-width) {
+        margin-bottom: .875em;
+      }
+      .icon {
+        display: block;
+        margin-right: .56em;
+        width: 1.33em;
+        min-width: 1.33em;
+        height: 1.33em;
+        background: $color-action;
+        border-radius: .44em;
+        padding: .33em .22em;
+        @media screen and (max-width: $responsive-xs-max-width) {
+          margin-right: .625em;
+        }
+      }
+    }
+  }
+  input {
+    padding: .89em 1.11em;
+    border-radius: .77em;
+    border: 2px solid $color-action;
+    @media screen and (max-width: $responsive-xs-max-width) {
+      font-size: 3vh;
+      padding: .67em;
+      border-color: #FFFFFF;
+    }
+    &.error {
+      border-color: $color-error;
+    }
+  }
+  &_error {
+    color: $color-error;
+    font-size: .97vw;
+    padding-top: .43em;
+    line-height: 1.43;
+    @media screen and (max-width: $responsive-xs-max-width) {
+      font-size: 1em;
+    }
+  }
+}
+
+.visibility-hidden {
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+}
+
+.mobile-visible {
+  display: none;
+  @media screen and (max-width: $responsive-xs-max-width) {
+    display: flex;
+  }
+}
+.mobile-hidden {
+  @media screen and (max-width: $responsive-xs-max-width) {
+    display: none;
+  }
+}
