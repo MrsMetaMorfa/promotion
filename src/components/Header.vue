@@ -4,7 +4,7 @@
     <button class="header_burger btn btn-link mobile-visible" type="button" @click="openMenu">
       <img :src="require(`@/assets/images/burger.svg`)" alt="Open menu">
     </button>
-    <nav class="nav" :class="{'open': isOpen}" @click="closeMenu">
+    <nav class="nav container" :class="{'open': isOpen}" @click="closeMenu">
       <button type="button" class="btn btn-close mobile-visible" @click="closeMenu">
         <img :src="require(`@/assets/images/close.svg`)" alt="Закрыть">
       </button>
